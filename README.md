@@ -160,6 +160,11 @@ do { $line = <STDIN>; ... } until !defined($line) || $line eq ".\n"
 `*CurModule::import_sub = \&Module::export_sub;`
 `use Module ();` - по сути эквивалентно коду: `BEGIN { require Module }`
 
+### Exporter
+@EXPORT_OK - массив с функциями которые пользователь должен явно указать при подключении
+
+@EXPORT - импортируются неявно при use.
+
 ### Наследование
 `parent` выполняет все тоже что и base:
 ```perl
@@ -417,9 +422,6 @@ say floor 5.96; # 5
 say round 5.16; # 5
 say round 5.96; # 6
 ```
-
-## Exporter
-@EXPORT_OK - массив с функциями которые пользователь должен явно указать при подключении, @EXPORT - импортируются неявно при use.
 
 
 ## DBI
